@@ -5,7 +5,7 @@ This repository evaluates the performance of three models—DeBERTa, XLM-RoBERTa
 
 ## Navigation
 
-The source code is located in the src/ directory, with additional scripts in the scripts/ folder. Notebooks can be found in the notebooks/ directory.
+The source code is located in the `src/` directory, with additional scripts in the `scripts/` folder. Notebooks can be found in the `notebooks/` directory. I prepared report `report.pdf` that summarizes my work also in notebook form in `notebooks/results`.
 
 ## Installation
 
