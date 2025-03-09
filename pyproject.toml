@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "writing_assistance"
+version = "0.0.1"
+description = "Codebase for Writing Assistance"
+requires-python = ">=3.8,<3.13"
+dependencies = [
+    "transformers",
+    "torch>=2.0.0",
+    "jupyter~=1.0.0",
+    "jupyterlab~=3.6",
+    "langchain",
+    "langchain_openai",
+    "langchain_core",
+    "pandas",
+    "scikit-learn",
+    "matplotlib",
+    "seaborn"
+]
+
+
+
+[project.urls]
+"Source" = "https://github.com/Micz26/WritingAssistance"
+
+[tool.setuptools]
+packages = { find = { where = ["src"] } }
+
+[tool.ruff]
+select = [
+    "E", # pycodestyle errors
+    "W", # pycodestyle warnings
+    "F", # pyflakes
+    "I", # isort
+    "C", # flake8-comprehensions
+    "B", # flake8-bugbear
+    # "UP",  # pyupgrade
+]
+line-length = 120
+ignore = [
+    # "E501", # line too long, handled by black
+    "B008", # do not perform function calls in argument defaults
+    "C901", # too complex
+    "W191", # indentation contains tabs
+]
+extend-exclude = [".venv/", "build/", "dist/", "docs/"]
+
+[tool.ruff.format]
+quote-style = "single"
+indent-style = "space"
+
+[tool.ruff.lint.isort]
+order-by-type = true
+lines-between-types = 1
+combine-as-imports = true
+# known_first_party = "common"
+
+[tool.setuptools.dynamic]
+readme = {file = ['README.md']}
